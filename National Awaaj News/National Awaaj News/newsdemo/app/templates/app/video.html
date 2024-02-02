@@ -1,0 +1,28 @@
+{% extends "app/base.html" %}
+{% load static%}
+{%block body%}
+<h2 style="text-align: center;">भिडीयो</h2>
+<div class="">
+    <div class="container">
+   
+<div class="row">
+   
+    {% for item in video %}
+
+    <div class="col-md-3 col-6 nt_display_grid">
+      <a href="" class="nt_display_grid">
+        <div class="nt_post_f2body">
+          <div class="nt_post_thumbnail">
+            <iframe id="player" width="320" height="200" src='{{item.videoUrl}}' frameborder="0">
+            </iframe>
+
+          </div>
+          <h4 style="text-align: center;">{{item.title|truncatewords:13}}</h4>
+        </div>
+      </a>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+</div>
+{% endblock%}

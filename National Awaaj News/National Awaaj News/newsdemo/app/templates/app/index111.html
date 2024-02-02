@@ -1,0 +1,889 @@
+{% extends "app/base.html" %}
+{% load static%}
+{% block title %}
+Home
+{% endblock %}
+{%block body%}
+
+<div class="container">
+  {% for news in trending|slice:":4"%}
+  <a href="{% url  'app:newsDetails' news.news_slug  %}">
+    <div class="main_news_body">
+      <h2>{{news.title}}</h2>
+      <h3 style="font-size: 22px;color: #fb0000; text-align: center;">
+      </h3>
+      <div class="news_post_author">
+        <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo"
+          style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+          class="nt_writer"> न्युज रेडियो टाइम्स </span>
+        <span class="nt_date ml-2">२०८० असोज १९, शुक्रबार</span>
+      </div>
+      <img width="2048" height="1536" src="{{news.image.url}}"
+      <img width="2048" height="1536" src="{{news.image.url}}"
+        class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+        sizes="(max-width: 2048px) 100vw, 2048px" />
+      <p>{{news.discriptions|safe|truncatewords:40}}.</p>
+    </div>
+  </a>
+  {%endfor%}
+
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="nt_cat_title">
+      {% for item in firstCategorie %}
+      <h3>{{item.categorie_name}}</h3>
+      {%endfor%}
+    </div>
+    <div class="col-md-3">
+      {% for item in firstCategorieNews|slice:":1" %}
+
+      <a href="{% url  'app:newsDetails' item.news_slug  %}">
+        <div class="nt_post_body">
+          <img width="1200" height="600" src="{{item.image.url}}"
+            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+            sizes="(max-width: 1200px) 100vw, 1200px" />
+          <h3>{{item.title|truncatewords:10}}</h3>
+          <div class="news_post_author">
+            <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo" height="90" width="90" loading="lazy"
+              decoding="async" /> <span class="nt_writer"> न्युज डेमों </span>
+            <span class="nt_date ml-2">२०८० असोज १८, बिहिबार</span>
+          </div>
+          <p>{{item.discriptions|safe|truncatewords:15}}</p>
+        </div>
+      </a>
+      {%endfor%}
+    </div>
+    <div class="col-md-4 col-sm-6 col-12">
+
+      {% for item in firstCategorieNews|slice:"2:4" %}
+
+      <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+        <div class="nt_post_f3body">
+          <div class="row nt_post_center">
+            <div class="col-4">
+              <img width="1195" height="733" src="{{item.images.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+                sizes="(max-width: 1195px) 100vw, 1195px" />
+            </div>
+            <div class="col-8 nt_post_f3content">
+              <h5>{{item.title|truncatewords:10}}</h5>
+              <div class="nt_date">२०८० असोज १५, सोमबार</div>
+            </div>
+          </div>
+        </div>
+      </a>
+      {%endfor%}
+
+    </div>
+
+
+  </div>
+</div>
+{% comment %} <div class="container">
+  <div class="row">
+    <div class="nt_cat_title">
+      {% for item in firstCategorie %}
+      <h3>{{item.categorie_name}}</h3>
+      {%endfor%}
+    </div>
+
+    {% for item in firstCategorieNews|slice:":1" %}
+    <div class="col-md-4">
+      <a href="{% url  'app:newsDetails' item.news_slug  %}">
+        <div class="nt_post_body">
+          <img width="1200" height="600" src="{% static 'app/images/3.jpg'%}"
+            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+            sizes="(max-width: 1200px) 100vw, 1200px" />
+          <h3>{{item.title|truncatewords:10}}</h3>
+          <div class="news_post_author">
+            <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo"
+              style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+              class="nt_writer"> न्युज रेडियो टाइम्स </span>
+            <span class="nt_date ml-2">२०८० असोज १८, बिहिबार</span>
+          </div>
+          <p>{{item.discriptions|safe|truncatewords:15}}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+
+    <div class="col-md-4 col-sm-6 col-12">
+      {% for item in firstCategorieNews|slice:"1:6" %}
+
+      <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+        <div class="nt_post_f3body">
+          <div class="row nt_post_center">
+            <div class="col-4">
+              <img width="1024" height="465" src="{% static 'app/images/3.jpg'%}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 1024px" />
+            </div>
+            <div class="col-8 nt_post_f3content">
+              <h5>{{item.title|truncatewords:10}}</h5>
+              <div class="nt_date">२०८० असोज १८, बिहिबार</div>
+            </div>
+          </div>
+      </a>
+    </div>
+    {%endfor%}
+  </div>
+  <div class="col-md-4 col-sm-6 col-12">
+    {% for item in firstCategorieNews|slice:"6:11" %}
+
+    <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+      <div class="nt_post_f3body">
+        <div class="row nt_post_center">
+          <div class="col-4">
+            <img width="1600" height="594" src="{{item.image.url}}"
+              class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+              sizes="(max-width: 1600px) 100vw, 1600px" />
+          </div>
+          <div class="col-8 nt_post_f3content">
+            <h5>{{item.title|truncatewords:10}}</h5>
+            <div class="nt_date">२०८० असोज १६, मंगलबार</div>
+          </div>
+        </div>
+      </div>
+    </a>
+    {%endfor%}
+
+  </div>
+
+</div>
+</div> {% endcomment %}
+{% comment %}
+<div class="container">
+  <div class="nt_cat_title">
+    {% for item in firstCategorie %}
+
+
+    <h3>{{item.categorie_name}}</h3>
+    {%endfor%}
+  </div>
+  <div class="row">
+
+    <div class="col-md-5">
+      {% for item in firstCategorieNews|slice:"1" %}
+
+      <a href="{% url  'app:newsDetails' item.news_slug  %}">
+        <div class="nt_post_body">
+          <img width="1100" height="673" src="{% static 'app/images/6.jpg'%}"
+            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+            sizes="(max-width: 1100px) 100vw, 1100px" />
+          <h3>{{item.title|truncatewords:10}}
+          </h3>
+          <div class="news_post_author">
+            <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo"
+              style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+              class="nt_writer"> न्युज रेडियो टाइम्स </span>
+            <span class="nt_date ml-2">२०८० असोज १८, बिहिबार</span>
+          </div>
+          <p>{{item.discriptions|safe|truncatewords:20}}.</p>
+        </div>
+      </a>
+      {%endfor%}
+
+    </div>
+
+    <div class="col-md-7">
+      <div class="row">
+        {% for item in firstCategorieNews|slice:"1:3" %}
+
+        <div class="col-md-6 col-6 nt_display_grid">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f2body">
+              <div class="nt_post_thumbnail">
+                <img width="1024" height="682" src="{{item.image.url}}"
+                  class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                  loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" />
+                <div class="neptop_date">२०८० असोज १८, बिहिबार</div>
+              </div>
+              <h4>{{item.title|truncatewords:10}}</h4>
+              <p>{{item.discriptions|safe|truncatewords:20}}.</p>
+
+            </div>
+          </a>
+        </div>
+        {%endfor%}
+        {% for item in firstCategorieNews|slice:"3:7" %}
+
+        <div class="col-sm-6 col-12 nt_display_grid">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="720" height="476" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 720px) 100vw, 720px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:10}}</h5>
+                  <div class="nt_date">२०८० असोज १७, बुधबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%endfor%}
+
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+<div class="container">
+  <div class="nt_cat_title">
+    {% for item in secondCategorie %}
+
+
+    <h3>{{item.categorie_name}}</h3>
+    {%endfor%}
+  </div>
+  <div class="row">
+
+    <div class="col-md-5">
+      {% for item in scondNewsSection|slice:"1" %}
+
+      <a href="{% url  'app:newsDetails' item.news_slug  %}">
+        <div class="nt_post_body">
+          <img width="1100" height="673" src="{% static 'app/images/6.jpg'%}"
+            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+            sizes="(max-width: 1100px) 100vw, 1100px" />
+          <h3>{{item.title|truncatewords:10}}
+          </h3>
+          <div class="news_post_author">
+            <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo"
+              style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+              class="nt_writer"> न्युज रेडियो टाइम्स </span>
+            <span class="nt_date ml-2">२०८० असोज १८, बिहिबार</span>
+          </div>
+          <p>{{item.discriptions|safe|truncatewords:20}}.</p>
+        </div>
+      </a>
+      {%endfor%}
+
+    </div>
+
+    <div class="col-md-7">
+      <div class="row">
+        {% for item in scondNewsSection|slice:"1:3" %}
+
+        <div class="col-md-6 col-6 nt_display_grid">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f2body">
+              <div class="nt_post_thumbnail">
+                <img width="1024" height="682" src="{{item.image.url}}"
+                  class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                  loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" />
+                <div class="neptop_date">२०८० असोज १८, बिहिबार</div>
+              </div>
+              <h4>{{item.title|truncatewords:10}}</h4>
+              <p>{{item.discriptions|safe|truncatewords:20}}.</p>
+
+            </div>
+          </a>
+        </div>
+        {%endfor%}
+        {% for item in scondNewsSection|slice:"3:8" %}
+
+        <div class="col-sm-6 col-12 nt_display_grid">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="720" height="476" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 720px) 100vw, 720px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:10}}</h5>
+                  <div class="nt_date">२०८० असोज १७, बुधबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%endfor%}
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in thirdCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="row">
+        {% for item in thirdSectionNews|slice:"0:6" %}
+
+        <div class="col-md-12 col-sm-6 col-12">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="1024" height="465" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:10}}</h5>
+                  <div class="nt_date">२०८० असोज १८, बिहिबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in fourthCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+
+      </div>
+      <div class="row">
+        {% for item in fourthSectionNews|slice:"0:6" %}
+
+        <div class="col-md-12 col-sm-6 col-12">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="1000" height="563" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 1000px) 100vw, 1000px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:10}}</h5>
+                  <div class="nt_date">२०८० असोज १९, शुक्रबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        {%endfor%}
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      {%if verticle_ad%}
+
+      {%for item in verticle_ad%}
+      <a href="{{item.url}}">
+        <aside id="block-8" class="neptop_side_ads widget widget_block widget_media_image">
+          <figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="726" height="1024"
+              src="{{ item.image.url }}" alt class="wp-image-91228" sizes="(max-width: 726px) 100vw, 726px" /></figure>
+        </aside>
+      </a>
+      {%endfor%}
+      {%endif%}
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="nt_cat_title">
+    {% for item in fifthCategorie %}
+
+
+    <h3>{{item.categorie_name}}</h3>
+    {%endfor%}
+  </div>
+  <div class="row">
+    {% for item in fifthSectionNews|slice:"0:4" %}
+
+
+    <div class="col-md-3 col-6 nt_display_grid">
+      <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+        <div class="nt_post_f2body">
+          <div class="nt_post_thumbnail">
+            <img width="982" height="553" src="{{item.image.url}}"
+              class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+              sizes="(max-width: 982px) 100vw, 982px" />
+            <div class="neptop_date">२०८० असोज १८, बिहिबार</div>
+          </div>
+          <h4>{{item.title|truncatewords:10}}</h4>
+        </div>
+      </a>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 nt_interview_container">
+      <div class="nt_cat_title">
+        {% for item in sixthCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="nt_interview_body">
+        <div class="row">
+          {% for item in sixthSectionNews|slice:"0:1" %}
+
+          <div class="col-md-5">
+            <a href="{% url  'app:newsDetails' item.news_slug  %}">
+              <img width="1024" height="648" src="{{item.image.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+                sizes="(max-width: 1024px) 100vw, 1024px" /> </a>
+          </div>
+          <div class="col-md-7">
+            <a href="{% url  'app:newsDetails' item.news_slug  %}">
+              <h3>‘{{item.title}}</h3>
+              <span> २०८० असोज १४, आइतबार</span>
+              <p>{{item.discriptions|safe|truncatewords:20}}</p>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="row">
+        {% for item in sixthSectionNews|slice:"0:1" %}
+
+        <div class="col-lg-3 col-md-6 col-6 nt_display_grid">
+          <div class="nt_interview_subbody">
+            <a href="{% url  'app:newsDetails' item.news_slug  %}">
+              <img src="{{item.image.url}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt
+                decoding="async" loading="lazy" />
+              <h4>{{item.title|truncatewords:10}}</h4>
+            </a>
+          </div>
+        </div>
+        {%endfor%}
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in seventhCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+
+      {% for item in seventhSectionNews|slice:"0:4" %}
+
+      <div class="neptop_opinion">
+        <a href="{% url  'app:newsDetails' item.news_slug  %}">
+          <img width="810" height="486" src="{{item.image.url}}"
+            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+            sizes="(max-width: 810px) 100vw, 810px" />
+          <h4>{{item.title|truncatewords:15}}</h4>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in eighthCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="row">
+        {% for item in eighthSectionNews|slice:"0:4" %}
+
+        <div class="col-md-12 col-sm-6 col-12">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="1195" height="733" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 1195px) 100vw, 1195px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:15}}</h5>
+                  <div class="nt_date">२०८० असोज १५, सोमबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+        {%endfor%}
+
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in ninethCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="row">
+        {% for item in ninethSectionNews|slice:"0:4" %}
+
+        <div class="col-md-12 col-sm-6 col-12">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="1195" height="733" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 1195px) 100vw, 1195px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:15}}</h5>
+                  <div class="nt_date">२०८० असोज १५, सोमबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in tenthCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="row">
+        {% for item in tenthSectionNews|slice:"0:4" %}
+
+        <div class="col-md-12 col-sm-6 col-12">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="1195" height="733" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 1195px) 100vw, 1195px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:15}}</h5>
+                  <div class="nt_date">२०८० असोज १५, सोमबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="nt_cat_title">
+        {% for item in eleventhCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          {% for item in eleventhSectionNews|slice:"0:1" %}
+
+          <a href="{% url  'app:newsDetails' item.news_slug  %}">
+            <div class="nt_post_body">
+              <img width="2048" height="1536" src="{{item.image.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+                sizes="(max-width: 2048px) 100vw, 2048px" />
+              <h3>{{item.title|truncatewords:15}}</h3>
+              <div class="news_post_author">
+                <img alt src="{{item.image.url}}" class="avatar avatar-90 photo"
+                  style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+                  class="nt_writer"> न्युज रेडियो टाइम्स </span>
+                <span class="nt_date ml-2">२०८० असोज १९, शुक्रबार</span>
+              </div>
+              <p>{{item.discriptions|safe|truncatewords:22}}</p>
+            </div>
+          </a>
+          {%endfor%}
+        </div>
+        <div class="col-md-6">
+          {% for item in eleventhSectionNews|slice:"1:6" %}
+
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f3body">
+              <div class="row nt_post_center">
+                <div class="col-4">
+                  <img width="1195" height="733" src="{{item.image.url}}"
+                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                    loading="lazy" sizes="(max-width: 1195px) 100vw, 1195px" />
+                </div>
+                <div class="col-8 nt_post_f3content">
+                  <h5>{{item.title|truncatewords:10}}</h5>
+                  <div class="nt_date">२०८० असोज १५, सोमबार</div>
+                </div>
+              </div>
+            </div>
+          </a>
+          {%endfor%}
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="nt_cat_title">
+        {% for item in twelvethCategorie %}
+
+
+        <h3>{{item.categorie_name}}</h3>
+        {%endfor%}
+      </div>
+      <div class="neptop_inte">
+        {% for item in twelvethSectionNews|slice:":1" %}
+
+        <img width="1200" height="550" src="{{item.image.url}}"
+          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+          sizes="(max-width: 1200px) 100vw, 1200px" />
+        <h4> {{item.title|truncatewords:15}}</h4>
+        <span>२०८० असोज १७, बुधबार</span>
+        {%endfor%}
+      </div>
+      <div class="col-md-12">
+        {% for item in twelvethSectionNews|slice:"1:3" %}
+
+        <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+          <div class="nt_post_f3body">
+            <div class="row nt_post_center">
+              <div class="col-4">
+                <img width="1195" height="733" src="{{item.image.url}}"
+                  class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                  loading="lazy" sizes="(max-width: 1195px) 100vw, 1195px" />
+              </div>
+              <div class="col-8 nt_post_f3content">
+                <h5>{{item.title|truncatewords:12}}</h5>
+                <div class="nt_date">२०८० असोज १५, सोमबार</div>
+              </div>
+            </div>
+          </div>
+        </a>
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="neptop_entertainment_body">
+  <div class="container">
+    <div class="nt_cat_title">
+      {% for item in thirteenthCategorie %}
+      <h3>{{item.categorie_name}}</h3>
+      {%endfor%}
+    </div>
+    <div class="row">
+      {% for item in thirteenthSectionNews|slice:"0:4" %}
+
+      <div class="col-md-3 col-6 nt_display_grid">
+        <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+          <div class="nt_post_f2body">
+            <div class="nt_post_thumbnail">
+              <img width="2000" height="1333" src="{{item.image.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+                sizes="(max-width: 2000px) 100vw, 2000px" />
+            </div>
+            <h4>{{item.title|truncatewords:13}}</h4>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="nep-sticky">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="nt_cat_title">
+              {% for item in fourteenthCategorie %}
+              <h3>{{item.categorie_name}}</h3>
+              {%endfor%}
+            </div>
+            <div class="row">
+              {% for item in fourteenthSectionNews|slice:"0:5" %}
+
+              <div class="col-md-12 col-sm-6 col-12">
+                <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+                  <div class="nt_post_f3body">
+                    <div class="row nt_post_center">
+                      <div class="col-4">
+                        <img width="1550" height="811" src="{{item.image.url}}"
+                          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                          loading="lazy" sizes="(max-width: 1550px) 100vw, 1550px" />
+                      </div>
+                      <div class="col-8 nt_post_f3content">
+                        <h5>{{item.title|truncatewords:10}}</h5>
+                        <div class="nt_date">२०८० असोज १८, बिहिबार</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              {%endfor%}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="nt_cat_title">
+              {% for item in fifteenCategorie %}
+              <h3>{{item.categorie_name}}</h3>
+              {%endfor%}
+            </div>
+            <div class="row">
+              {% for item in fifteenSectionNews|slice:"0:5" %}
+
+              <div class="col-md-12 col-sm-6 col-12">
+                <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+                  <div class="nt_post_f3body">
+                    <div class="row nt_post_center">
+                      <div class="col-4">
+                        <img width="1550" height="811" src="{{item.image.url}}"
+                          class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                          loading="lazy" sizes="(max-width: 1550px) 100vw, 1550px" />
+                      </div>
+                      <div class="col-8 nt_post_f3content">
+                        <h5>{{item.title|truncatewords:10}}</h5>
+                        <div class="nt_date">२०८० असोज १८, बिहिबार</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              {%endfor%}
+            </div>
+          </div>
+        </div>
+        <div class="nt_cat_title">
+          {% for item in sixteenCategorie %}
+          <h3>{{item.categorie_name}}</h3>
+          {%endfor%}
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            {% for item in sixteenSectionNews|slice:"0:1" %}
+
+            <a href="{% url  'app:newsDetails' item.news_slug  %}">
+              <div class="nt_post_body">
+                <img width="579" height="297" src="{{item.image.url}}"
+                  class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                  loading="lazy" sizes="(max-width: 579px) 100vw, 579px" />
+                <h3>{{item.title|truncatewords:10}}</h3>
+                <div class="news_post_author">
+                  <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo"
+                    style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+                    class="nt_writer"> न्युज रेडियो टाइम्स </span>
+                  <span class="nt_date ml-2">२०८० असोज १३, शनिबार</span>
+                </div>
+                <p>{{item.discriptions|safe|truncatewords:20}}</p>
+              </div>
+            </a>
+            {%endfor%}
+          </div>
+          <div class="col-md-6 col-sm-6 col-12">
+            {% for item in sixteenSectionNews|slice:"1:6" %}
+
+            <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+              <div class="nt_post_f3body">
+                <div class="row nt_post_center">
+                  <div class="col-4">
+                    <img width="1024" height="707" src="{{item.image.url}}"
+                      class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                      loading="lazy" sizes="(max-width: 1024px) 100vw, 1024px" />
+                  </div>
+                  <div class="col-8 nt_post_f3content">
+                    <h5>{{item.title}}</h5>
+                    <div class="nt_date">२०८० असोज ७, आइतबार</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            {%endfor%}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-12 ">
+      <div class="nep-sticky">
+        <aside id="block-12" class="neptop_side_ads widget widget_block"><iframe
+            src="https://www.ashesh.com.np/rashifal/widget.php?header_title=Nepali%20Rashifal&amp;header_color=f0b03f&amp;api=5020y7m230"
+            frameborder="0" scrolling="yes" marginwidth="0" marginheight="0"
+            style="border:none; overflow:hidden; width:100%; height:1210px; border-radius:5px;"
+            allowtransparency="true">
+          </iframe></aside>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="nt_cat_title">
+    {% for item in seventeenCategorie %}
+    <h3>{{item.categorie_name}}</h3>
+    {%endfor%}
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      {% for item in seventeenSectionNews|slice:"0:1" %}
+
+      <a href="{% url  'app:newsDetails' item.news_slug  %}">
+        <div class="nt_post_body">
+          <img width="1200" height="800" src="{{item.image.url}}"
+            class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+            sizes="(max-width: 1200px) 100vw, 1200px" />
+          <h3>{{item.title|truncatewords:10}}</h3>
+          <div class="news_post_author">
+            <img alt src="{{about.logo.url}}" class="avatar avatar-90 photo"
+              style="object-fit: cover; height=90px; width: 65px;" loading="lazy" decoding="async" /> <span
+              class="nt_writer"> न्युज रेडियो टाइम्स </span>
+            <span class="nt_date ml-2">२०८० असोज १८, बिहिबार</span>
+          </div>
+          <p>{{item.discriptions|safe|truncatewords:24}}</p>
+        </div>
+      </a>
+      {%endfor%}
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        {% for item in seventeenSectionNews|slice:"1:5" %}
+        <div class="col-md-6 col-6 nt_display_grid">
+          <a href="{% url  'app:newsDetails' item.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f2body">
+              <div class="nt_post_thumbnail">
+                <img width="640" height="360" src="{{item.image.url}}"
+                  class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                  loading="lazy" sizes="(max-width: 640px) 100vw, 640px" />
+                <div class="neptop_date">२०८० असोज १६, मंगलबार</div>
+              </div>
+              <h4>{{item.title|truncatewords:10}}</h4>
+              <p>{{item.discriptions|safe|truncatewords:20}}</p>
+            </div>
+          </a>
+        </div>
+
+
+        {%endfor%}
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

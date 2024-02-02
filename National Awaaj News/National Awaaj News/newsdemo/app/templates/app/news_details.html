@@ -1,0 +1,143 @@
+{% extends "app/base.html" %}
+{% load static%}
+
+{% block metatag%}
+<meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content=" नेशनल आवाज न्युज" />
+  <meta property="og:description" content="लोकतन्त्र र समृद्धिका लागि" />
+  <meta property="og:url" content="{{about.logo.url}}" />
+  <meta property="og:site_name" content=" नेशनल आवाज न्युज" />
+  <meta property="og:image" content="{{about.logo.url}}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="628" />
+  <meta property="og:image:type" content="image/png" />
+{% endblock %}
+
+{% block title %}
+news detail
+{% endblock %}
+{%block body%}
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=652509627da2d70012db43c5&product=sticky-share-buttons&source=platform" async="async"></script>
+  <div class="container nep_container">
+    <div class="nep_flex">
+      <div class="nt_single_head">
+        <div class="sharethis-sticky-share-buttons"></div>
+        <div class="single_title" id="single_title">
+          <h1>{{newsDetails.title}}</h1>
+        </div>
+        <h3 style="font-size: 20px;color: #fb0000;">
+        </h3>
+        <div class="news_post_author">
+          <a href="{% url 'app:index'%}">
+            <img alt src="{{about.logo.url}}"
+              class="avatar avatar-90 photo" height="90" width="90" loading="lazy" decoding="async" />
+            <span class="nt_writer">नेशनल आवाज न्युज </span>
+          </a>
+          <span class="ps-2 pt-1"><i class="fa-regular fa-clock"></i> - {{newsDetails.create_date}}</span>
+        </div>
+        <div class="nep-row">
+          <div class="nep-col-70">
+            <div class="nep_content">
+              <img width="721" height="513" src="{{newsDetails.image.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                sizes="(max-width: 721px) 100vw, 721px" />
+              <div class="nep_share_btn">
+                <div class="nep_share_btnleft">
+                  <span>शेयर गर्नुहोस:</span>
+                  <div class="sharethis-inline-share-buttons"></div>
+                </div>
+                <div class="nep_share_btnright">
+                  <div class="nep_font_box">
+                    <small>फन्ट परिवर्तन गर्नुहोस:</small>
+                    <span class="font-small" style="font-size: 18px;" onclick="fucsmall()">अ</span>
+                    <span class="font-mid" style="font-size: 21px;" onclick="fucmid()"> अ</span>
+                    <span class="font-larg" style="font-size: 25px;" onclick="fuclarg()">अ</span>
+                  </div>
+                  <script>
+                    function fucsmall() {
+                      document.getElementById("nep_content").style.font = "18px justify karma";
+                    }
+                    function fucmid() {
+                      document.getElementById("nep_content").style.font = "21px justify karma";
+                    }
+                    function fuclarg() {
+                      document.getElementById("nep_content").style.font = "25px justify karma";
+                    }
+                  </script>
+                </div>
+              </div>
+              <div id="nep_content">
+                <p>{{newsDetails.discriptions|safe}}</p>
+              </div>
+            </div>
+            <div class="nep_notice">
+              <p>  प्रकाशित कुनै सामग्रीबारे कुनै गुनासो, सूचना तथा सुझाव भए हामीलाई <a
+                  href="{{about.email}}" ></a>{{about.email}} मा पठाउनु होला ।
+                धन्यवाद ।</p>
+            </div>
+            <!-- <div class="nep_reaction_btn neptop_block">
+              <h3>यो खबर पढेर तपाईलाई कस्तो महसुस भयो ?</h3>
+              <div class="sharethis-inline-reaction-buttons"></div>
+            </div> -->
+            {% comment %} <div class="nep_comment cmtbox">
+              <h3>प्रतिक्रिया</h3>
+              <div class="fb-comments cmtbox" data-href="/" data-width="100%"
+                data-numposts="7"></div>
+            </div> {% endcomment %}
+          </div>
+          <div class="nep-col-30">
+            <div class="single_sidebar nep-sticky">
+              <div class="nep_cat_title">ताजा अपडेट </div>
+              {% for news in trending|slice:"0:7"%}
+
+              <a href="{% url  'app:newsDetails' news.news_slug  %}" class="nt_display_grid">
+                <div class="nt_post_f3body">
+                  <div class="row nt_post_center">
+                    <div class="col-4">
+                      <img width="1024" height="576"
+                        src="{{news.image.url}}"
+                        class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                        loading="lazy"
+                        sizes="(max-width: 1024px) 100vw, 1024px" />
+                    </div>
+                    <div class="col-8 nt_post_f3content">
+                      <h5>{{news.title|truncatewords:12}}</h5>
+                      <div class="nt_date">{{news.create_date}}</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            {%endfor%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="nep_related_news">
+      <h3>सम्बन्धित खबर</h3>
+      <div class="row">
+        {% for news in relatedNews%}
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 nt_display_grid">
+          <a href="{% url  'app:newsDetails' news.news_slug  %}" class="nt_display_grid">
+            <div class="nt_post_f2body">
+              <div class="nt_post_thumbnail">
+                <img width="1024" height="576"
+                  src="{{news.image.url}}"
+                  class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 1024px" />
+              </div>
+              <h4>  {{news.title|truncatewords:12}}</h4>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+ 
+ {% endblock%}

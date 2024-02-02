@@ -1,0 +1,87 @@
+/*
+Theme Name: neptop-yugkhabar
+Theme URI: https://yugkhabar.com/
+Author: Neptop Team
+Author URI: https://neptop.com/
+Description: Yugkhabar news theame
+Version: 1.3.1
+Requires PHP: 7.2
+Text Domain: yugkhabar
+*/
+* {
+    box-sizing: border-box;
+    transition: 0.4s ease all;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	font-family: Karma;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+li{
+	list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+	line-height: 1.5;
+}
+
+blockquote {
+    background: #f9ccca;
+    border-left: 10px solid #06488c;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+	
+}
+
+blockquote:before {
+    font-size: 2.7rem;
+    font-family: 'FontAwesome';
+    content: '\f10e';
+    position: relative;
+    top: 0;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -40px;
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 67px;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.nep_pagination nav{
+	background: #fff;
+}
+.nep_pagination{
+
+}
+.nep_pagination i.page-link {
+    background: #ed4942;
+}
+.nep_pagination i a {
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.page-item.active .page-link{
+	background: #2d5489;
+}

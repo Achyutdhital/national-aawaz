@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+{% load static%}
+{%block body%}
+<h2 style="text-align: center;">परचार</h2>
+<div class="">
+    <div class="container">
+   
+<div class="row">
+   
+    {% for item in ads %}
+
+    <div class="col-md-3 col-6 nt_display_grid">
+      <a href="" class="nt_display_grid">
+        <div class="nt_post_f2body">
+          <div class="nt_post_thumbnail">
+            <img width="2000" height="1333" src="{{item.adsImg.url}}"
+                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async" loading="lazy"
+                sizes="(max-width: 2000px) 100vw, 2000px" />
+
+          </div>
+          <h4 style="text-align: center;">{{item.title|truncatewords:13}}</h4>
+        </div>
+      </a>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+</div>
+{% endblock%}

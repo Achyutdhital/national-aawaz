@@ -1,0 +1,349 @@
+.main_news_body{
+      margin: 2rem 0;
+      padding: 1rem 0;
+      box-shadow: 0px 1px 1px 0px rgb(13 12 12 / 65%);
+      border-radius: 10px;
+      color: #000;
+   }
+   .main_news_body h2{
+      font-size: 2.6rem;
+      text-align: center;
+      font-weight: 800;
+      color: #000;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+   }
+   .main_news_body img{
+      width: 100%;
+      height: auto;
+   }
+   .news_post_author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      margin-bottom: .5rem;
+
+   }
+   .news_post_author img{
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+   }
+   .news_post_author span{
+      /* margin-right: 50px; */
+   }
+   .main_news_body p{
+      font-size: 1.3rem;
+      padding: 1rem;
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.6;
+   }
+   @media (max-width: 768px){
+    .main_news_body h2{
+      font-size: 1.7rem;
+    }
+    .news_post_author img{
+      width: 30px;
+      height: 30px;
+    }
+    .news_post_author span {
+    margin-right: 20px;
+    font-size: 12px;
+   }
+   .main_news_body p{
+      font-size: 1rem;
+   }
+}
+
+.nt_post_body{
+   margin-bottom: 1rem;
+   box-shadow: 0px 1px 1px 0px rgb(13 12 12 / 65%);
+   color: #000;
+}
+.nt_post_body h3{
+   font-size: 1.9rem;
+   font-weight: 900;
+   line-height: 1.3;
+   margin: 0;
+   margin-top: 1rem;
+   padding: 0 1rem;
+}
+.nt_post_body p{
+   padding: 0 1rem;
+}
+.nt_post_body .news_post_author{
+   justify-content: flex-start;
+   margin-bottom: .5rem;
+   padding: 0 1rem;
+
+
+    }
+ .nt_post_body .news_post_author img{
+     height: 25px;
+     width: 25px;
+     margin-right: 5px;
+ }
+ .nt_post_body .news_post_author span{
+        font-size: 13px;
+        margin-right: 20px;
+    }
+.nt_cat_title{
+   border-bottom: 2px solid #2d5489;
+   margin: .7rem 0;
+   margin-top: 1.1rem;
+
+
+}
+.nt_cat_title h3{
+   font-size: 28px;
+   font-weight: 900;
+   color: #2d5489;
+}
+
+.nt_display_grid{
+    display: grid;
+}
+.nt_post_f2body{
+    box-shadow: 0px 1px 3px 0px rgb(13 12 12 / 60%);
+    margin-bottom: .7rem;
+    color: #000;
+    
+}
+.nt_post_f2body h4{
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin: 0;
+    padding: .6rem;
+    padding-bottom: .1rem;
+}
+.nt_post_thumbnail{
+    position: relative;
+}
+.nt_post_thumbnail img{
+    object-fit: cover;
+    height:190px;
+    width: 100%;
+}
+.neptop_date{
+    font-size: 12px;
+font-weight: 600;
+color: #fff;
+background: #ed4942;
+position: absolute;
+bottom: 0;
+padding: 7px 7px 5px 7px;
+}
+.nt_post_f2body p{
+    font-size: .9rem;
+    padding-left: .6rem;
+    margin-bottom: .3rem;
+}
+
+.nt_post_f3body{
+        border: solid 1px #e9ecef;
+    border-radius: 8px;
+        margin: .5rem 0;
+        color: #000;
+        height: 79px;
+        display: flex;
+        align-items: center;
+    }
+    .nt_post_f3body img{
+                height: 79px;
+                width: 100%;
+        object-fit: cover;
+    }
+    .nt_post_f3body h5{
+        font-size: 1rem;
+        font-weight: 900;
+        margin: 0;
+        padding: .1rem 0;
+		line-height: 1.5;
+    }
+    .nt_post_f3body .nt_date{
+        font-size: 12px;
+        padding-bottom: .3rem;
+    }
+    .nt_post_f3content{
+        align-items: center;
+        justify-content: center;
+        margin-left: -10px;
+    }
+    .nt_post_center{
+        display: flex;
+        align-items: center;
+    }
+    @media (max-width: 768px){
+      ..nt_cat_title{
+         margin: 1rem 0;
+      }
+        .nt_post_body h3{
+            font-size: 1.5rem;
+			line-height: 1.6;
+        }
+        .nt_post_body p{
+            font-size: 15px;
+        }
+        .nt_post_f2body h4{
+            font-size: 1rem;
+			line-height: 1.5;
+        }
+        .nt_post_f2body p{
+            font-size: .8rem;
+        }
+        .nt_post_f3body h5{
+            font-size: .9rem;
+			line-height: 1.4;
+        }
+        .nt_post_f3body .nt_date{
+            font-size: 10px;
+        }
+        .neptop_date{
+            font-size: 11px;
+            padding: 4px;
+            padding-bottom: 3px;
+            background: #000;
+        }
+        .nt_post_f3body{
+            margin: .4rem 0;
+        }
+		.nt_interview_body h3{
+			font-size: 1.2rem;
+    		line-height: 1.6;
+		}
+		.nt_interview_subbody h4{
+			font-size: 1rem;
+    		line-height: 1.5;
+		}
+    }
+.nt_interview_container {
+    background: #f8f9fa;
+    padding-bottom: 1rem;
+}
+.nt_interview_body{
+}
+
+.nt_interview_body img{
+   height: 100%;
+   object-fit: cover;
+   width: 100%;
+}
+.nt_interview_body h3{
+   font-size: 1.7rem;
+   font-weight: 800;
+   padding-top: .6rem;
+   margin: 0;
+   color: #000;
+
+}
+.nt_interview_body span{
+   font-size: .9rem;
+   font-weight: 800;
+   color: #565454;  
+}
+.nt_interview_body p{
+   font-size: 1rem;
+   font-weight: 800;
+   margin: 0;
+   color: #000;
+
+}
+
+.nt_interview_subbody{
+   margin-top: 1rem;
+   border: solid 1px #e9ecef;
+}
+
+.nt_interview_subbody img{
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+.nt_interview_subbody h4{
+   font-size: 16px;
+   font-weight: 700;
+   margin-top: .7rem;
+   color: #000;
+   text-align: center;
+}
+.neptop_opinion {
+   display: flex;
+   align-items: center;
+   margin: 0.5rem 0;
+   border-bottom: solid 1px #000;
+   padding: 0.5rem 0;
+}
+
+.neptop_opinion a {
+    display: flex;
+    align-items: center;
+}
+.neptop_opinion:first-child{
+   margin: 0;
+   padding-top: 0;
+}
+.neptop_opinion:last-child{
+   border-bottom: none;
+}
+.neptop_opinion img{
+   width: 79px;
+   height: 79px;
+   border-radius: 50%;
+   float: left;
+   margin-right: .7rem;
+   object-fit: cover;
+
+}
+.neptop_opinion h4{
+   font-size: 1.1rem;
+   margin: 0;
+   font-weight: 800;
+   color: #000;
+
+}
+.neptop_inte{
+
+}
+.neptop_inte img{
+
+}
+.neptop_inte h4{
+   font-size: 1.2rem;
+   margin: 0;
+   margin-top: .7rem;
+   font-weight: 800;
+}
+.neptop_inte span{
+   font-size: 12px;
+   font-weight: 600;
+}
+.neptop_entertainment_body{
+   background: #000;
+   padding: .5rem 0;
+   margin: 1rem;
+}
+.neptop_entertainment_body img{
+   height: 220px;
+   width: 100%;
+   object-fit: cover;
+}
+.neptop_entertainment_body .nt_cat_title{
+   border: none;
+   text-align: center;
+}
+.neptop_entertainment_body .nt_cat_title h3{
+   color: #fff;
+}
+.neptop_entertainment_body .nt_post_f2body{
+   box-shadow: none;
+}
+.neptop_entertainment_body .nt_post_f2body h4{
+   color: #fff;
+   padding: 1rem 0;
+	text-align: center;
+	line-height: 1.4;
+}
+}

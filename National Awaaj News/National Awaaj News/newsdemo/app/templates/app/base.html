@@ -1,0 +1,1008 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block metatag%}
+
+
+  {% endblock %}
+  <title>National Awaj News | 
+  
+    {% block title  %}
+
+    {% endblock %}
+</title>  
+<style>
+  .footer-content1 {
+    font-size: 16px;
+    margin-right: 30px;
+    /* border-bottom: 1px solid #fff; */
+    /* padding-bottom: 20px; */
+    margin: 0.7rem 0;
+}
+.footer-content1 h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-bottom: solid #2D5489 2px;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+</style>
+  <link rel="pingback" href="xmlrpc.php">
+
+
+  <link rel="dns-prefetch" href="http://stats.wp.com/" />
+  <link rel="dns-prefetch" href="http://use.fontawesome.com/" />
+  <link rel="dns-prefetch" href="http://fonts.googleapis.com/" />
+  <script type="text/javascript">
+    window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/", "ext": ".png'%}", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/demo.com\/wp-includes\/js\/wp-emoji-release.min.js" } };
+    /*! This file is auto-generated */
+    !function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { p.clearRect(0, 0, i.width, i.height), p.fillText(e, 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(t, 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (p && p.fillText) switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !s("\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff", "\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff") }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e.wpemoji))) }(window, document, window._wpemojiSettings);
+  </script>
+  <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 0.07em !important;
+      vertical-align: -0.1em !important;
+      background: none !important;
+      padding: 0 !important;
+    }
+  </style>
+  <link rel="stylesheet" id="wp-block-library-css" href="{% static 'app/wp-includes/css/dist/block-library/style.min.css'%}"
+    type="text/css" media="all" />
+  <style id="wp-block-library-inline-css" type="text/css">
+    .has-text-align-justify {
+      text-align: justify;
+    }
+  </style>
+  <link rel="stylesheet" id="jetpack-videopress-video-block-view-css"
+    href="{% static 'app/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/view1eec.css?minify=false&amp;ver=34ae973733627b74a14e'%}"
+    type="text/css" media="all" />
+  <link rel="stylesheet" id="mediaelement-css"
+    href="{% static 'app/wp-includes/js/mediaelement/mediaelementplayer-legacy.min1f61.css?ver=4.2.17'%}" type="text/css" media="all" />
+  <link rel="stylesheet" id="wp-mediaelement-css" href="{% static 'app/wp-includes/js/mediaelement/wp-mediaelement.min.css'%}"
+    type="text/css" media="all" />
+  <link rel="stylesheet" id="classic-theme-styles-css" href="{% static 'app/wp-includes/css/classic-themes.min.css'%}" type="text/css"
+    media="all" />
+  <style id="global-styles-inline-css" type="text/css">
+    body {
+      --wp--preset--color--black: #000000;
+      --wp--preset--color--cyan-bluish-gray: #abb8c3;
+      --wp--preset--color--white: #ffffff;
+      --wp--preset--color--pale-pink: #f78da7;
+      --wp--preset--color--vivid-red: #cf2e2e;
+      --wp--preset--color--luminous-vivid-orange: #ff6900;
+      --wp--preset--color--luminous-vivid-amber: #fcb900;
+      --wp--preset--color--light-green-cyan: #7bdcb5;
+      --wp--preset--color--vivid-green-cyan: #00d084;
+      --wp--preset--color--pale-cyan-blue: #8ed1fc;
+      --wp--preset--color--vivid-cyan-blue: #0693e3;
+      --wp--preset--color--vivid-purple: #9b51e0;
+      --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+      --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+      --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+      --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+      --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+      --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+      --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+      --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+      --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+      --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+      --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+      --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+      --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+      --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+      --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+      --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+      --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+      --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+      --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+      --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+      --wp--preset--font-size--small: 13px;
+      --wp--preset--font-size--medium: 20px;
+      --wp--preset--font-size--large: 36px;
+      --wp--preset--font-size--x-large: 42px;
+      --wp--preset--spacing--20: 0.44rem;
+      --wp--preset--spacing--30: 0.67rem;
+      --wp--preset--spacing--40: 1rem;
+      --wp--preset--spacing--50: 1.5rem;
+      --wp--preset--spacing--60: 2.25rem;
+      --wp--preset--spacing--70: 3.38rem;
+      --wp--preset--spacing--80: 5.06rem;
+      --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+      --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+      --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+      --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+      --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+    }
+
+    :where(.is-layout-flex) {
+      gap: 0.5em;
+    }
+
+    body .is-layout-flow>.alignleft {
+      float: left;
+      margin-inline-start: 0;
+      margin-inline-end: 2em;
+    }
+
+    body .is-layout-flow>.alignright {
+      float: right;
+      margin-inline-start: 2em;
+      margin-inline-end: 0;
+    }
+
+    body .is-layout-flow>.aligncenter {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    body .is-layout-constrained>.alignleft {
+      float: left;
+      margin-inline-start: 0;
+      margin-inline-end: 2em;
+    }
+
+    body .is-layout-constrained>.alignright {
+      float: right;
+      margin-inline-start: 2em;
+      margin-inline-end: 0;
+    }
+
+    body .is-layout-constrained>.aligncenter {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+      max-width: var(--wp--style--global--content-size);
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    body .is-layout-constrained>.alignwide {
+      max-width: var(--wp--style--global--wide-size);
+    }
+
+    body .is-layout-flex {
+      display: flex;
+    }
+
+    body .is-layout-flex {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    body .is-layout-flex>* {
+      margin: 0;
+    }
+
+    :where(.wp-block-columns.is-layout-flex) {
+      gap: 2em;
+    }
+
+    .has-black-color {
+      color: var(--wp--preset--color--black) !important;
+    }
+
+    .has-cyan-bluish-gray-color {
+      color: var(--wp--preset--color--cyan-bluish-gray) !important;
+    }
+
+    .has-white-color {
+      color: var(--wp--preset--color--white) !important;
+    }
+
+    .has-pale-pink-color {
+      color: var(--wp--preset--color--pale-pink) !important;
+    }
+
+    .has-vivid-red-color {
+      color: var(--wp--preset--color--vivid-red) !important;
+    }
+
+    .has-luminous-vivid-orange-color {
+      color: var(--wp--preset--color--luminous-vivid-orange) !important;
+    }
+
+    .has-luminous-vivid-amber-color {
+      color: var(--wp--preset--color--luminous-vivid-amber) !important;
+    }
+
+    .has-light-green-cyan-color {
+      color: var(--wp--preset--color--light-green-cyan) !important;
+    }
+
+    .has-vivid-green-cyan-color {
+      color: var(--wp--preset--color--vivid-green-cyan) !important;
+    }
+
+    .has-pale-cyan-blue-color {
+      color: var(--wp--preset--color--pale-cyan-blue) !important;
+    }
+
+    .has-vivid-cyan-blue-color {
+      color: var(--wp--preset--color--vivid-cyan-blue) !important;
+    }
+
+    .has-vivid-purple-color {
+      color: var(--wp--preset--color--vivid-purple) !important;
+    }
+
+    .has-black-background-color {
+      background-color: var(--wp--preset--color--black) !important;
+    }
+
+    .has-cyan-bluish-gray-background-color {
+      background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+    }
+
+    .has-white-background-color {
+      background-color: var(--wp--preset--color--white) !important;
+    }
+
+    .has-pale-pink-background-color {
+      background-color: var(--wp--preset--color--pale-pink) !important;
+    }
+
+    .has-vivid-red-background-color {
+      background-color: var(--wp--preset--color--vivid-red) !important;
+    }
+
+    .has-luminous-vivid-orange-background-color {
+      background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+    }
+
+    .has-luminous-vivid-amber-background-color {
+      background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+    }
+
+    .has-light-green-cyan-background-color {
+      background-color: var(--wp--preset--color--light-green-cyan) !important;
+    }
+
+    .has-vivid-green-cyan-background-color {
+      background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+    }
+
+    .has-pale-cyan-blue-background-color {
+      background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+    }
+
+    .has-vivid-cyan-blue-background-color {
+      background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+    }
+
+    .has-vivid-purple-background-color {
+      background-color: var(--wp--preset--color--vivid-purple) !important;
+    }
+
+    .has-black-border-color {
+      border-color: var(--wp--preset--color--black) !important;
+    }
+
+    .has-cyan-bluish-gray-border-color {
+      border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+    }
+
+    .has-white-border-color {
+      border-color: var(--wp--preset--color--white) !important;
+    }
+
+    .has-pale-pink-border-color {
+      border-color: var(--wp--preset--color--pale-pink) !important;
+    }
+
+    .has-vivid-red-border-color {
+      border-color: var(--wp--preset--color--vivid-red) !important;
+    }
+
+    .has-luminous-vivid-orange-border-color {
+      border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+    }
+
+    .has-luminous-vivid-amber-border-color {
+      border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+    }
+
+    .has-light-green-cyan-border-color {
+      border-color: var(--wp--preset--color--light-green-cyan) !important;
+    }
+
+    .has-vivid-green-cyan-border-color {
+      border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+    }
+
+    .has-pale-cyan-blue-border-color {
+      border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+    }
+
+    .has-vivid-cyan-blue-border-color {
+      border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+    }
+
+    .has-vivid-purple-border-color {
+      border-color: var(--wp--preset--color--vivid-purple) !important;
+    }
+
+    .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+      background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+    }
+
+    .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+      background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+    }
+
+    .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+      background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+    }
+
+    .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+      background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+    }
+
+    .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+      background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+    }
+
+    .has-cool-to-warm-spectrum-gradient-background {
+      background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+    }
+
+    .has-blush-light-purple-gradient-background {
+      background: var(--wp--preset--gradient--blush-light-purple) !important;
+    }
+
+    .has-blush-bordeaux-gradient-background {
+      background: var(--wp--preset--gradient--blush-bordeaux) !important;
+    }
+
+    .has-luminous-dusk-gradient-background {
+      background: var(--wp--preset--gradient--luminous-dusk) !important;
+    }
+
+    .has-pale-ocean-gradient-background {
+      background: var(--wp--preset--gradient--pale-ocean) !important;
+    }
+
+    .has-electric-grass-gradient-background {
+      background: var(--wp--preset--gradient--electric-grass) !important;
+    }
+
+    .has-midnight-gradient-background {
+      background: var(--wp--preset--gradient--midnight) !important;
+    }
+
+    .has-small-font-size {
+      font-size: var(--wp--preset--font-size--small) !important;
+    }
+
+    .has-medium-font-size {
+      font-size: var(--wp--preset--font-size--medium) !important;
+    }
+
+    .has-large-font-size {
+      font-size: var(--wp--preset--font-size--large) !important;
+    }
+
+    .has-x-large-font-size {
+      font-size: var(--wp--preset--font-size--x-large) !important;
+    }
+
+    .wp-block-navigation a:where(:not(.wp-element-button)) {
+      color: inherit;
+    }
+
+    :where(.wp-block-columns.is-layout-flex) {
+      gap: 2em;
+    }
+
+    .wp-block-pullquote {
+      font-size: 1.5em;
+      line-height: 1.6;
+    }
+  </style>
+  <!-- <link rel="stylesheet" id="font-awesome-css" href="../use.fontawesome.com/releases/v6.2.0/css/all.css'%}" type="text/css"
+    media="all" /> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-3eU2H4x/d7MNUmq0oIgDE0n+pxQ/voL7S0V+V0DULbPxSq3znnBfBxOnAkeiUJL/8Z1h3Lk5K0zplzF8LqLp0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" id="font-awesome-css" href="{% static 'app/use.fontawesome.com/releases/v6.2.0/css/all.css'%}" type="text/css"
+    media="all" />
+  <link rel="stylesheet" id="wpb-google-fonts-css"
+    href="https://fonts.googleapis.com/css2?family=Karma%3Awght%40500%3B600%3B700&amp;display=swap" type="text/css"
+    media="all" />
+  <link rel="stylesheet" id="bootstrap-css" href="{% static 'app/wp-content/themes/demo/inc/css/nt_bootstrap.css'%}" type="text/css"
+    media="all" />
+  <link rel="stylesheet" id="style-css" href="{% static 'app/wp-content/themes/demo/style.css'%}" type="text/css" media="all" />
+  <link rel="stylesheet" id="neptop-css" href="{% static 'app/wp-content/themes/demo/inc/css/neptop.css'%}" type="text/css"
+    media="all" />
+  <link rel="stylesheet" id="neptop-post-css" href="{% static 'app/wp-content/themes/demo/inc/css/neptop_post.css'%}" type="text/css"
+    media="all" />
+  <link rel="stylesheet" id="jetpack_css-css" href="{% static 'app/wp-content/plugins/jetpack/css/jetpack7c26.css?ver=12.3'%}"
+    type="text/css" media="all" />
+  <link rel="https://api.w.org/" href="wp-json/{% url 'app:index' %}" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% static 'app/wp-includes/wlwmanifest.xml'%}" />
+
+
+  <style>
+    img#wpstats {
+      display: none
+    }
+  </style>
+  
+  <link rel="icon" href="{{about.logo.url}}"
+    sizes="32x32" />
+  <link rel="icon" href="{{about.logo.url}}"
+    sizes="192x192" />
+  <link rel="apple-touch-icon"
+    href="{{about.logo.url}}" />
+
+  <style type="text/css" id="wp-custom-css">
+    .neptop_ads img {
+      position: relative;
+    }
+
+    .neptop_ads:before {
+      position: absolute;
+      content: 'Advertisement';
+      right: 0;
+      color: #fff;
+      background: #060606;
+      top: 0;
+      padding: 0px 5px;
+      font-size: 10px;
+    }
+
+    .nep_notice {
+      text-align: left;
+      border: #ccc 1px solid;
+      border-radius: 0.4rem;
+      background: #00666a;
+      margin: 1rem 0;
+    }
+
+    .nep_notice p {
+      margin: 0;
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 0.3rem;
+      font-weight: 600;
+    }
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...." crossorigin="anonymous" />
+  <link rel="stylesheet" href="path/to/your/custom/style.css">
+
+  <script src="path/to/your/script.js"></script>
+
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: "2cff560a-650b-44c7-a718-336281ae571f",
+      });
+    });
+  </script>
+
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          '../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MWM4J77');</script>
+
+</head>
+<body>
+
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWM4J77" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="nt-header-body">
+    <div class="container nt-header-content">
+      <div class="row">
+        <div class="col-md-4 nt-header-left">
+          <a href="{% url 'app:index'%}" class="custom-logo-link" rel="home" aria-current="page"><img width="934" height="286"
+              src="{{about.logo.url}}" style="height: 100px; width: 170px;" class="custom-logo" alt=" नेशनल आवाज न्युज"
+              decoding="async"
+              sizes="(max-width: 934px) 100vw, 934px" /></a>
+          <div class="nt-header-date justify-content-start">
+            <i class="fa-solid fa-calendar-days pt-2"></i>
+            <iframe style="position: relative; top: 0px; padding-left: 8px; text-style:bold; " scrolling="no" border="0" frameborder="0" marginwidth="0" marginheight="0" allowtransparency="true" src="https://www.ashesh.com.np/linknepali-time.php?dwn=only&amp;font_color=c40228&amp;font_size=16&amp;font_weight=bolder&amp;bikram_sambat=0&amp;format=dmyw&amp;api=962173k280" width="165" height="22"></iframe>
+          </div>
+        </div>
+      {%if horizontal_ad%}
+      <div class="col-md-8 nt-header-right">
+        <a href="{{horizontal_ad.url}}">
+          <aside id="block-7" class="widget widget_block widget_media_image">
+            <figure class="wp-block-image size-full is-style-default">
+              <img decoding="async" loading="lazy" width="1100" height="{{horizontal_ad.image.height}}" 
+                src="{{horizontal_ad.image.url}}" alt class="wp-image-84346" style="max-width: 90%; max-height: 100px; float:right;" />
+            </figure>
+          </aside>
+        </a>
+      </div>
+
+        {%endif%}
+      </div>
+    </div>
+  </div>
+
+
+<nav>
+  <div class="container">
+    <div class="wrapper">
+      <div class="logo"><a href="{% url 'app:index' %}"><i class="fa-solid fa-house"></i></a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+      
+        {% for category in allCategories|slice:":11" %}
+        {% with subcategories=category.categorie.all %}
+            <li>
+                <a href="{% url 'app:news_category' main_category_slug=category.main_ctg_slug %}" class="desktop-item">{{ category.categorie_name }}</a>
+                <input type="checkbox" id="showDrop2">
+                <label for="showDrop2" class="mobile-item">{{ category.categorie_name }}</label>
+                {% if subcategories %}
+                    <input type="checkbox" id="showDrop-{{ category.main_ctg_slug }}" class="showDrop-checkbox">
+                    <ul class="drop-menu">
+                        {% for subcategory in subcategories %}
+                            <li><a href="{% url 'app:news_category' main_category_slug=category.main_ctg_slug sub_category_slug=subcategory.subctgslug %}">{{ subcategory.subcategorie_name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endwith %}
+    {% endfor %}
+    <li><a href="{% url 'app:video' %}">भिडीयो</a></li>
+    <li><a href="{% url 'app:ads' %}">परचार</a></li>
+
+        <li>
+          <a href="{% url 'app:index' %}" class="desktop-item">अन्य</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">अन्य</label>
+          <ul class="drop-menu">
+     
+            {% for category in allCategories|slice:"11:" %}
+            {% with subcategories=category.categorie.all %}
+                <li>
+                    <a href="{% url 'app:news_category' main_category_slug=category.main_ctg_slug %}">{{ category.categorie_name }}</a>
+    
+                    {% if subcategories %}
+                        <input type="checkbox" id="showDrop-{{ category.main_ctg_slug }}" class="showDrop-checkbox">
+                        <ul class="drop-menu">
+                            {% for subcategory in subcategories %}
+                                <li><a href="{% url 'app:news_category' main_category_slug=category.main_ctg_slug sub_category_slug=subcategory.subctgslug %}">{{ subcategory.subcategorie_name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endwith %}
+        {% endfor %}
+          </ul>
+        </li>
+
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </div>
+</nav>
+
+
+  <style type="text/css">
+    nav {
+      z-index: 50;
+      width: 100%;
+      background: #00666a;
+      width: 100%;
+      margin-bottom: 1rem;
+
+    }
+
+    nav .wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .wrapper .logo a {
+      color: #f2f2f2;
+      font-size: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      line-height: 0;
+    }
+
+    .wrapper .logo i {
+      margin-top: 5px;
+    }
+
+    .nav-links li {
+      list-style: none;
+      float: left;
+      display: grid;
+    }
+
+    .nav-links li a {
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 15px 15px;
+      transition: all 0.3s ease;
+      z-index: 100;
+    }
+
+    .nav-links li a:hover {
+      background: #ed4942;
+    }
+
+    .nav-links .mobile-item {
+      display: none;
+    }
+
+    .nav-links .drop-menu {
+      position: absolute;
+      background: #b5cded;
+      width: 180px;
+      line-height: 45px;
+      top: 1px;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .drop-menu li {
+      float: none;
+    }
+
+    .nav-links li:hover .drop-menu,
+    .nav-links li:hover .mega-box {
+      transition: all 0.3s ease;
+      top: 57px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .drop-menu li a {
+      width: 100%;
+      display: block;
+      padding: 0 0 0 15px;
+      font-weight: 400;
+      border-radius: 0px;
+      color: #000;
+    }
+
+    .mega-box {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 57px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .mega-box .content {
+      background: #b5cded;
+      padding: 25px 20px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .mega-box .content .nav-row {
+      width: calc(25% - 30px);
+      line-height: 45px;
+    }
+
+    .content .nav-row img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content .nav-row header {
+      color: #000;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .content .nav-row .mega-links {
+      margin-left: -40px;
+      border-left: 2px solid rgb(14 14 14)
+    }
+
+    .nav-row .mega-links li {
+      padding: 0 20px;
+    }
+
+    .nav-row .mega-links li a {
+      padding: 0px;
+      padding: 0 20px;
+      color: #000;
+      font-size: 17px;
+      display: block;
+    }
+
+    .nav-row .mega-links li a:hover {
+      color: #f2f2f2;
+    }
+
+    .wrapper .btn {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      margin-top: 10px;
+    }
+
+    .wrapper .btn.close-btn {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+
+    .wrapper ul {
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    ul.drop-menu {
+      padding: 0;
+    }
+
+
+    @media screen and (max-width: 970px) {
+      .wrapper .nav-links {
+        display: inline-flex;
+      }
+
+      .wrapper .btn {
+        display: block;
+        position: absolute;
+        right: 0;
+      }
+
+      .wrapper .nav-links {
+        z-index: 99;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 350px;
+        top: -10px;
+        left: -100%;
+        background: #b5cded;
+        display: block;
+        padding: 50px 10px;
+        line-height: 50px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+        transition: all 0.3s ease;
+      }
+
+      /* custom scroll bar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #242526;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #3A3B3C;
+      }
+
+      #menu-btn:checked~.nav-links {
+        left: 0%;
+      }
+
+      #menu-btn:checked~.btn.menu-btn {
+        display: none;
+      }
+
+      #close-btn:checked~.btn.menu-btn {
+        display: block;
+      }
+
+
+      .nav-links li {
+        margin: 15px 10px;
+        float: none;
+        display: block;
+      }
+
+      .nav-links li a {
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+        color: #000;
+      }
+
+      .nav-links .drop-menu {
+        position: static;
+        opacity: 1;
+        top: 65px;
+        visibility: visible;
+        padding-left: 20px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease;
+      }
+
+      #showDrop:checked~.drop-menu,
+      #showMega:checked~.mega-box {
+        max-height: 100%;
+      }
+      
+      #showDrop2:checked~.drop-menu,
+      #showMega:checked~.mega-box {
+        max-height: 100%;
+      }
+
+
+      .nav-links .desktop-item {
+        display: none;
+      }
+
+      .nav-links .mobile-item {
+        display: block;
+        color: #000;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links .mobile-item:hover {
+        background: #3A3B3C;
+      }
+
+      .drop-menu li {
+        margin: 0;
+      }
+
+      .drop-menu li a {
+        font-size: 18px;
+      }
+
+      .mega-box {
+        position: static;
+        top: 65px;
+        opacity: 1;
+        visibility: visible;
+        padding: 0 20px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mega-box .content {
+        box-shadow: none;
+        flex-direction: column;
+        padding: 20px 20px 0 20px;
+      }
+
+      .mega-box .content .nav-row {
+        width: 100%;
+        margin-bottom: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .mega-box .content .nav-row:nth-child(1),
+      .mega-box .content .nav-row:nth-child(2) {
+        border-top: 0px;
+      }
+
+      .content .nav-row .mega-links {
+        border-left: 0px;
+        padding-left: 15px;
+      }
+
+      .nav-row .mega-links li {
+        margin: 0;
+      }
+
+      .content .nav-row header {
+        font-size: 19px;
+      }
+    }
+
+    nav input {
+      display: none;
+    }
+
+    .nt-search a {
+      background: #fff;
+      color: #000;
+    }
+
+    .nt-search a:hover {
+      background: #fff;
+    }
+
+    .nt-search i {
+      color: #000;
+    }
+  </style>
+  <div class="container">
+  </div>
+
+  {% block body%}
+  {%endblock%}
+
+  <div class="nt_footer_body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-12 footer-content">
+          <h4>नेपाल मिसन न्युज</h4>
+          <small>
+           {{about.address}} </small>
+           <p>{{about.title}}</p>
+        </div>
+        <div class="col-md-3 col-12 footer-content1">
+          <h3>अन्य लिंक</h3>
+          <p> <strong>कार्यकारी सम्पादक:-</strong>{{about.editor}}</p>
+          <p> <strong> सूचना तथा प्रशारण विभाग दर्ता:-</strong>{{about.DepartmentRegistrationNo}}</p>
+          <p> <strong>इमेल:-</strong> <a
+            href=""> <span
+              class=""
+             >{{about.email}}</span></a></p>
+             <p> <strong>सम्पर्क:-</strong>{{about.contactNo}} </p>
+        </div>
+        <div class="col-md-2 col-12 footer-content">
+          <h3>अन्य लिंक</h3>
+          <li><a href="{% url 'app:contact'%}">सम्पर्क</a></li>
+        </div>
+        <div class="col-md-3 col-12 footer-content">
+          <h3>साइट नेविगेशन</h3>
+          {% for category in allCategories|slice:":6" %}
+          <li><a href="{% url 'app:news_category' main_category_slug=category.main_ctg_slug %}">   {{ category.categorie_name }}</a></li>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nt_footer_copyright">
+    <div class="container">
+      <a href="{{about.facebookUrl}}" target="_blank"> <img src="{% static 'app/socialmedia/facebook.png'%}">
+      </a>
+      <a href="{{about.twitterUrl}}" target="_blank"> <img src="{% static 'app/socialmedia/twitter.png'%}"> </a>
+      <a href="{{about.youtubeUrl}}" target="_blank"> <img src="{% static 'app/socialmedia/youtube.png'%}"> </a>
+      <a href="{{about.tiktokUrl}}" target="_blank"> <img src="{% static 'app/socialmedia/tiktok.png'%}"> </a>
+      <p>&copy;  नेशनल आवाज न्युज  All Right Reserved.
+    </div>
+  </div>
+  <script data-cfasync="false" src="{% static 'app/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js'%}"></script>
+  <script defer type="text/javascript" src="{% static 'app/stats.wp.com/e-202340.js" id="jetpack-stats-js'%}"></script>
+  <script type="text/javascript" id="jetpack-stats-js-after">
+    _stq = window._stq || [];
+    _stq.push(["view", { v: 'ext', blog: '180101789', post: '0', tz: '5.75', srv: 'demo.com', j: '1:12.3' }]);
+    _stq.push(["clickTrackerInit", "180101789", "0"]);
+  </script>
+</body>
+
+</html>

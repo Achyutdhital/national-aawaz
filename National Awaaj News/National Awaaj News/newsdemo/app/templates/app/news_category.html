@@ -1,0 +1,54 @@
+{% extends "app/base.html" %}
+{% load static%}
+{% block title %}
+News category
+{% endblock %}
+{%block body%}
+
+    <div class="container ">
+        <div class="nep_cat_title"> <a href="{% url 'app:index' %}">होमपेज</a> /    
+            {% if sub_category %}
+            {{ sub_category.subcategorie_name }} ({{ main_category.categorie_name }})
+        {% else %}
+            {{ main_category.categorie_name }}
+        {% endif %}</div>
+        <div class="row nep_pagination">
+            {% for news in news_list %}
+
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6 nt_display_grid">
+                <a href="{% url 'app:newsDetails' news.news_slug %}" class="nt_display_grid">
+                    <div class="nt_post_f2body">
+                        <div class="nt_post_thumbnail">
+                            <img width="1200" height="600"
+                                src="{{news.image.url}}"
+                                class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt decoding="async"
+                                sizes="(max-width: 1200px) 100vw, 1200px" />
+                        </div>
+                        <h4>{{news.title|truncatewords:15}}</h4>
+                    </div>
+                </a>
+            </div>
+          {%endfor%}
+            
+            <nav aria-label="page navigation">
+                <ul class="pagination pagination-sm">
+                    {% comment %} <li class="active page-item" class="page-item"><a href="index.html" class="page-link">1</a></li> {% endcomment %}
+                    {% if page_obj.has_previous %}
+                    <li class="page-item"><a href="?page=1" class="page-link"></a></li>
+                    {%endif%}
+                    {% for i in page_obj.paginator.page_range %}
+
+                    <li class="page-item"><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+                    {%endfor%}
+                    {% comment %} <li class="page-item"><a href="#" class="page-link">...</a></li>
+                    <li class="page-item"><a href="page/126/index.html" class="page-link">126</a></li> {% endcomment %}
+                    {% if page_obj.has_next %}
+                    <li class="page-item"><i class="page-link"><a href="?page={{ page_obj.paginator.num_pages }}">Next Page &raquo;</a></i>
+                        {%endif%}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    </div>
+  {% endblock%}
